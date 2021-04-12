@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="bg-transparent flex flex-col min-h-screen mt-auto">
 
-<NavBar :items='menuItems' :title='title' :icons='socialIcons'></NavBar>
+<!-- <NavBar :items='menuItems' :title='title' :icons='socialIcons'></NavBar> -->
 <main class="flex-auto min-h-full">
  <Hero></Hero>
  <!-- ........ Blog Carousel Section............ -->
@@ -43,10 +43,10 @@
 // import HelloWorld from './components/HelloWorld.vue'
 
 import 'es6-promise/auto'
-import NavBar from './components/NavBar'
+// import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import Card from './components/Card'
-import socialIcons from '../mixins/browse.mixins'
+// import socialIcons from '../mixins/browse.mixins'
 import ObjectDatePicker from './components/ObjectDatePicker'
 import StringDatePicker from './components/StringDatePicker'
 // store data in one place so any component can get it
@@ -57,9 +57,9 @@ import StringDatePicker from './components/StringDatePicker'
 
 export default {
   name: 'App',
-mixins:[socialIcons],
+// mixins:[socialIcons],
   components: {
-    NavBar,
+    // NavBar,
     Hero,
     Card,
     ObjectDatePicker,

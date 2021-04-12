@@ -13,11 +13,15 @@
             >
            
                 <ul class="flex flex-col  md:flex-row text-sm  " >
-                    <li  v-for="item in items" :key="item" 
+                
+                    <li  v-for="item in routerObject" :key="item.name" 
                     class="hover:bg-gray-100 p-3 rounded-lg hover:text-green-500">
-                        <a  href="">
-                            {{item}}
+                       <router-link  :to="item.to"> 
+                        <a>
+                        
+                            {{item.name}}
                         </a>
+                        </router-link> |
                     </li>
                 </ul>
             </div>
@@ -69,6 +73,23 @@ computed:{
 isOpen(){
   
 return store.getters.getOpen
+},
+routerObject(){
+    const routerPaths =this.$props.items.map(name=>{
+       
+    switch(name){
+        case 'Home':
+            return {to:`/`,name}
+         case 'Post':
+            return {to:`/${name.toLowerCase()}/1`,name} 
+        case 'Profile':
+            return {to:`/${name.toLowerCase()}/1`,name}                  
+        default: return {to:`/${name.toLowerCase()}`,name}
+    }
+        
+    })
+
+    return routerPaths
 }
 },
 }
